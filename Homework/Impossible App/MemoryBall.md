@@ -11,7 +11,7 @@
   ![](5.jpg)
 
   ![](4.jpg)
-  + By clicking the edit button, you can rewind and edit the previous part. For
++ By clicking the edit button, you can rewind and edit the previous part. For
   example, you can add a conversation or change the color of the kite when suddenly you realize there were some
   lapses and you want to go back and correct that part of memory.
   ![](3.jpg)
@@ -19,6 +19,6 @@
   choose to alter. You can click the check mark to finish editing and go back to the recalling page.
   ![](2.jpg)
 
-  + Choose a kind of detail you would like to alter such as the conversation. Then you can
++ Choose a kind of detail you would like to alter such as the conversation. Then you can
   begin to change the conversation by rethinking about this part. Press the stop button when you stop rethinking.
   ![](1.jpg)
