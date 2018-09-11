@@ -1,18 +1,31 @@
 
 var hairColorDark = ("purple");
-var bgColor = ("white");
+var bgColor = ("black");
 var eyeOrbitWidth = 22;
 var eyeOrbitHeight = 16;
 var eyeBallSize = 10;
+
+var imgGuitar;
+
+function preload(){
+  imgGuitar = loadImage('guitar.png');
+}
 function setup() {
   // put setup code here
-  createCanvas(windowWidth,windowHeight);
+    createCanvas(windowWidth,windowHeight);
+
 }
 
 function draw() {
+  var skinColor = color(250,236,241,255);
+  var skinColorDark = color(204,154,161,200);
+  var pantsColor = color(59,117,151,255);
   // put drawing code here
   background(bgColor);
   noStroke();
+  /*fill("white");
+  ellipse(150,150,70,70);
+*/
   //hair
   ellipseMode(CENTER);
   strokeJoin(ROUND);
@@ -34,16 +47,22 @@ function draw() {
   vertex(800,48);
   endShape();
   //face
-  stroke("black");
+  fill(skinColor);
+  noStroke();
   strokeWeight(1.7);
-  noFill();
-  bezier(800,48,780,268,810,200,900,155);
+  //noFill();
+  beginShape();
+  vertex(792,90);
+  bezierVertex(780,268,810,200,900,155);
+  vertex(900,60);
+  endShape();
   //eyebrows
+  stroke("black");
   fill("black");
   triangle(790,100,815,103,792,89);
   triangle(865,103,890,100,887,92);
   //eye
-  noFill();
+  fill("white");
   ellipse(802,118,eyeOrbitWidth,eyeOrbitHeight);
   ellipse(874,118,eyeOrbitWidth,eyeOrbitHeight);
   ellipseMode(CORNER);
@@ -52,7 +71,6 @@ function draw() {
   ellipse(869,113,eyeBallSize,eyeBallSize);
   //nose
   noFill();
-  strokeJoin(ROUND);
   beginShape();
   vertex(830,122);
   vertex(824,138);
@@ -61,7 +79,6 @@ function draw() {
   //sunglasses
   //mouth
   noFill();
-  strokeJoin(MITER);
   beginShape();
   vertex(815,162);
   vertex(836,164);
@@ -70,19 +87,86 @@ function draw() {
   vertex(818,175);
   endShape();
   //neck
+  noStroke();
+  fill(skinColor);
   beginShape();
   vertex(820,200);
   vertex(845,190);
   vertex(842,222);
   vertex(823,227);
   endShape(CLOSE);
+
   //body
+  noStroke();
   fill("orange");
   beginShape();
   vertex(780,229);
   vertex(877,218);
   vertex(902,242);
-  vertex(955,402);
+  vertex(907,402);
   vertex(775,425);
   endShape(CLOSE);
+  //pants
+  fill(pantsColor);
+  beginShape();
+  vertex(898,404);
+  vertex(944,692);
+  vertex(832,692);
+  vertex(835,455);
+  vertex(807,692);
+  vertex(690,690);
+  vertex(760,420);
+  endShape();
+  //right arm
+  fill("orange");
+  beginShape();
+  vertex(902,242);
+  vertex(904,318);
+  vertex(953,375);
+  vertex(1002,379);
+  endShape();
+  //guitar
+  image(imgGuitar,630,250,500,280);
+  //right hand
+  translate(932,360);
+  rotate(PI+HALF_PI+PI/3);
+  fill(skinColor);
+  rect(3,-37,40,45,6);
+  translate(70,30);
+  rotate(-HALF_PI);
+  rect(36,-28,7,14,60);
+  resetMatrix();
+  //right arm - another half
+  fill("orange");
+  translate(932,360);
+  rotate(PI+HALF_PI+PI/3);
+  rect(0,0,50,60,3);
+  //left hand
+  fill(skinColor);
+  resetMatrix();
+  translate(725,372);
+  rotate(PI+HALF_PI+PI/3);
+  rect(0,0,45,57,7);
+  rect(48,16,6,17,7);
+  strokeWeight("2.5")
+  line()
+  //left arm
+  strokeWeight("1");
+  fill("orange");
+  resetMatrix();
+  beginShape();
+  vertex(740,249);
+  vertex(780,230);
+  vertex(795,252);
+  vertex(745,340);
+  vertex(800,360);
+  vertex(710,377);
+  vertex(675,330);
+  endShape(CLOSE);
+
+
+
+
+
+
 }
