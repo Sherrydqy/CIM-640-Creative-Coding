@@ -128,6 +128,7 @@ function draw() {
   //guitar
   image(imgGuitar,630,250,500,280);
   //right hand
+  push();
   translate(932,360);
   rotate(PI+HALF_PI+PI/3);
   fill(skinColor);
@@ -135,7 +136,8 @@ function draw() {
   translate(70,30);
   rotate(-HALF_PI);
   rect(36,-28,7,14,60);
-  resetMatrix();
+  pop();
+  //resetMatrix();
   //right arm - another half
   fill("orange");
   translate(932,360);
@@ -164,6 +166,7 @@ function draw() {
   vertex(675,330);
   endShape(CLOSE);
 
+  //shoes
 
 
 
