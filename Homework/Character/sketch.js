@@ -4,28 +4,73 @@ var bgColor = ("black");
 var eyeOrbitWidth = 22;
 var eyeOrbitHeight = 16;
 var eyeBallSize = 10;
-
+var musicalNote;
 var imgGuitar;
-
+var initI,initJ;
+var r,g,b;
+var btnSing;
+var lyricX,lyricY;
+var lyricarray;
+var lyrics;
+var timesOfDrawing=0;
 function preload(){
-  imgGuitar = loadImage('guitar.png');
+  imgGuitar = loadImage('../addons/guitar.png');
+  musicalNote = loadImage('../addons/music.png');
+  initI=1;
+  initJ=1;
+  initK=0;
 }
 function setup() {
   // put setup code here
     createCanvas(windowWidth,windowHeight);
+    lyricarray=createVector("Havana, ooh na-na (ay)",
+    "Half of my heart is in Havana ooh-na-na (ay, ay)",
+    "He took me back to East Atlanta, na-na-na",
+);
+    lyrics = lyricarray.array();
+    btnSing = createButton("Let's karaoke!");
+    btnSing.position(300,300);
+    btnSing.size(100,40);
 
 }
 
 function draw() {
+  timesOfDrawing+=1;
+  background("bgColor");
+  stroke("white");
+  btnSing.mousePressed(function(){
+
+    lyricX=random(10,600);
+    lyricY=random(10,600);
+    r=random(256);
+    g=random(256);
+    b=random(256);
+    stroke(r,g,b);
+
+    text(lyrics[initK],lyricX,lyricY);
+
+  });
+  text("Try to move your mouse over the guitar！", 300,100);
   var skinColor = color(250,236,241,255);
   var skinColorDark = color(204,154,161,200);
   var pantsColor = color(59,117,151,255);
+  if(initI>110){
+    initI=1;
+    initJ=1;
+  }
+  initI+=1;
+  initJ+=1;
+  initK+=1;
+  if(initK>2){
+    initK=0;
+  }
+
   // put drawing code here
-  background(bgColor);
-  noStroke();
+
   /*fill("white");
   ellipse(150,150,70,70);
 */
+
   //hair
   ellipseMode(CENTER);
   strokeJoin(ROUND);
@@ -127,12 +172,18 @@ function draw() {
   endShape();
   //guitar
   image(imgGuitar,630,250,500,280);
+ if(mouseX > 630 && mouseX <1130 && mouseY > 250 && mouseY < 530){
+    //console.log("here")；
+  //  image(musicalNote,mouse,j,80,80);
+      image(musicalNote,mouseX-initI,mouseY-initJ,80,80);
+  }
   //right hand
   push();
   translate(932,360);
   rotate(PI+HALF_PI+PI/3);
   fill(skinColor);
   rect(3,-37,40,45,6);
+
   translate(70,30);
   rotate(-HALF_PI);
   rect(36,-28,7,14,60);
@@ -167,9 +218,5 @@ function draw() {
   endShape(CLOSE);
 
   //shoes
-
-
-
-
 
 }
