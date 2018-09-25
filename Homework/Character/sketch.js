@@ -13,6 +13,7 @@ var lyricX,lyricY;
 var lyricarray;
 var lyrics;
 var timesOfDrawing=0;
+var isMousePressed=-1;
 function preload(){
   imgGuitar = loadImage('../addons/guitar.png');
   musicalNote = loadImage('../addons/music.png');
@@ -36,21 +37,26 @@ function setup() {
 
 function draw() {
   timesOfDrawing+=1;
-  background("bgColor");
+  background(r,g,b);
   stroke("white");
+  fill("white");
   btnSing.mousePressed(function(){
-
+    isMousePressed*=(-1);
     lyricX=random(10,600);
     lyricY=random(10,600);
     r=random(256);
     g=random(256);
     b=random(256);
-    stroke(r,g,b);
-
+    stroke("white");
     text(lyrics[initK],lyricX,lyricY);
 
   });
-  text("Try to move your mouse over the guitar！", 300,100);
+  if(isMousePressed==1){
+    text("Try to move your mouse over the guitar！", 300,100);
+  }
+  else{
+    text("Havana, ooh na-na (ay)", 300,100);
+  }
   var skinColor = color(250,236,241,255);
   var skinColorDark = color(204,154,161,200);
   var pantsColor = color(59,117,151,255);
