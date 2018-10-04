@@ -16,10 +16,7 @@ var timesOfDrawing=0;
 var isMousePressed=-1;
 function preload(){
   imgGuitar = loadImage('../addons/guitar.png');
-  musicalNote = loadImage('../addons/music.png');
-  initI=1;
-  initJ=1;
-  initK=0;
+
 }
 function setup() {
   // put setup code here
