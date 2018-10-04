@@ -24,15 +24,39 @@ function preload(){
 function setup() {
   // put setup code here
     createCanvas(windowWidth,windowHeight);
+    lyricarray=createVector("Havana, ooh na-na (ay)",
+    "Half of my heart is in Havana ooh-na-na (ay, ay)",
+    "He took me back to East Atlanta, na-na-na",
+);
+    lyrics = lyricarray.array();
+    btnSing = createButton("Let's karaoke!");
+    btnSing.position(300,300);
+    btnSing.size(100,40);
 
 }
 
 function draw() {
-
+  timesOfDrawing+=1;
   background(r,g,b);
   stroke("white");
   fill("white");
+  btnSing.mousePressed(function(){
+    isMousePressed*=(-1);
+    lyricX=random(10,600);
+    lyricY=random(10,600);
+    r=random(256);
+    g=random(256);
+    b=random(256);
+    stroke("white");
+    text(lyrics[initK],lyricX,lyricY);
 
+  });
+  if(isMousePressed==1){
+    text("Try to move your mouse over the guitar！", 300,100);
+  }
+  else{
+    text("Havana, ooh na-na (ay)", 300,100);
+  }
   var skinColor = color(250,236,241,255);
   var skinColorDark = color(204,154,161,200);
   var pantsColor = color(59,117,151,255);
@@ -154,7 +178,11 @@ function draw() {
   endShape();
   //guitar
   image(imgGuitar,630,250,500,280);
-
+ if(mouseX > 630 && mouseX <1130 && mouseY > 250 && mouseY < 530){
+    //console.log("here")；
+  //  image(musicalNote,mouse,j,80,80);
+      image(musicalNote,mouseX-initI,mouseY-initJ,80,80);
+  }
   //right hand
   push();
   translate(932,360);

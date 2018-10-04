@@ -4,8 +4,8 @@ var selection;
 var textInput;
 var submitButton;
 var numberOfImage = 0;
-var posX = [0,100,200,300];
-var posY = [0,100,200,300];
+var posX = [];
+var posY = [];
 
 function preload(){
   sun = loadImage("../assets/sun.png");
@@ -26,7 +26,7 @@ function setup() {
     console.log(textInput.value());
   })
   textInput.position(70,70);
-
+  numberOfImage = textInput.value();
   selection.position(10,10);
   selection.option("sun");
   selection.option("moon");
@@ -45,9 +45,10 @@ function draw() {
   // put drawing code here
   background(255);
 
-  for(var i = 0; i<10;i++){
-
-    image(curImage,random(width),random(height),curImage.width/random(1,5),curImage.height/random(1,5));
+  for(var i = 0; i<numberOfImage;i++){
+    posX[i]=random(width);
+    posY[i]=random(height);
+    image(curImage,posX[i],posY[i],curImage.width/4,curImage.height/4);
   }
 
 }
