@@ -4,16 +4,11 @@ var bgColor = ("black");
 var eyeOrbitWidth = 22;
 var eyeOrbitHeight = 16;
 var eyeBallSize = 10;
-var musicalNote;
 var imgGuitar;
 var initI,initJ;
 var r,g,b;
-var btnSing;
-var lyricX,lyricY;
-var lyricarray;
-var lyrics;
-var timesOfDrawing=0;
-var isMousePressed=-1;
+
+
 function preload(){
   imgGuitar = loadImage('../addons/guitar.png');
 
@@ -33,16 +28,6 @@ function draw() {
   var skinColor = color(250,236,241,255);
   var skinColorDark = color(204,154,161,200);
   var pantsColor = color(59,117,151,255);
-  if(initI>110){
-    initI=1;
-    initJ=1;
-  }
-  initI+=1;
-  initJ+=1;
-  initK+=1;
-  if(initK>2){
-    initK=0;
-  }
 
   // put drawing code here
 
