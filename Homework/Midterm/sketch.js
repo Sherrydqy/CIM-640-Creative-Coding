@@ -210,9 +210,7 @@ function eatFood(){
         currentFaceImg = imgFaceAwake;
       }
     }
-  //  if(millis)
-    /*if(youSize)
-    prevMillis2 = millis();*/
+
   }
 }
 
