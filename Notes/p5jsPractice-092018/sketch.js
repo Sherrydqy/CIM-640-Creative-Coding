@@ -1,4 +1,4 @@
-
+var r,g,b;
 
 function setup() {
   // put setup code here
@@ -15,7 +15,15 @@ function draw() {
   }
   ellipse(mouseX,mouseY,30,30);*/
   background(0);
-  fill("pink");
-  arc(50,50,100,100,radians(20),radians(40));
+  stroke("white");
+  r=random(0,256);
+  g=0;
+  b=random(0,255);
+  fill(r,g,b);
+  for(var i = 0;i<mouseX;i+=25){
+    for(var j = 0; j<height; j+=25){
+      ellipse(i,j,13,13);
+    }
+  }
 
 }
