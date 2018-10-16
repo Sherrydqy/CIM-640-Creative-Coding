@@ -1,4 +1,4 @@
-# Assignment
+# Homework
 
 * [The Impossible App](/Homework/Impossible-App/MemoryBall.md)
 * [Character](https://sherrydqy.github.io/CIM640/Homework/Character/index.html)
