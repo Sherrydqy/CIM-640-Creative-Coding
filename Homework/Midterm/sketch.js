@@ -162,7 +162,7 @@ function wakeUp(){
 
 function eatFood(){
   /* This is ms */
-  text()
+
   imageMode(CENTER);
   ellipseMode(CENTER);
   fill(meColor);
@@ -210,7 +210,7 @@ function eatFood(){
         currentFaceImg = imgFaceAwake;
       }
     }
-    if(millis)
+  //  if(millis)
     /*if(youSize)
     prevMillis2 = millis();*/
   }
