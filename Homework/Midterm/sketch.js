@@ -73,6 +73,8 @@ function setup() {
 function draw() {
 
   background(0);
+  textSize(40);
+  text("DON'T OVEREAT!",20,70);
   if(nowHour<6||nowHour > 18){
     currentBgImg = imgMoon;
   }
@@ -250,7 +252,13 @@ function weighTime(){
   ellipse(x,y,youSize);
   image(currentFaceImg,x,y,youSize+youSize/4,youSize+youSize/4);
   textSize(30);
-  text("You have gained: "+ gainedWeight + " pounds!!!!\n Say goodbye to your waffle and throw yourself in the GYM!",width/2-300, height/2);
+  if(gainedWeight<1){
+    text("You have gained: 0 pounds!!!!\n Good for you!",width/2-300, height/2);
+  }
+  else{
+    text("You have gained: "+ gainedWeight + " pounds!!!!\n Say goodbye to your waffle and throw yourself in the GYM!",width/2-300, height/2);
+
+  }
 }
 
 function loseWeight(){

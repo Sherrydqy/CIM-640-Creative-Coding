@@ -22,16 +22,16 @@
 
 
 ## What are your outputs?
-> Her facial expression can change to angry if you wake her up too early.
-> Instruction words will change.
-> She can move.
-> If she eats a waffle(which is when she touches a waffle),this waffle will disappear. And she will become fatter(bigger)
-> The time left will increase if you press SPACE when avoiding waffles.
-> You will know how much weight she have gained after the play section. The bigger the waffle is, the more weight she will gain. The more waffles she eats, the more weight she will gain.
+- Her facial expressions would change to angry if you wake her up too early.
+- Instruction words will change.
+- She can move.
+- If she eats a waffle(which is when she touches a waffle),this waffle will disappear. And she will become fatter(bigger)
+- The time left will increase if you press SPACE when avoiding waffles.
+- You will know how much weight she have gained after the play section. The bigger the waffle is, the more weight she will gain. The more waffles she eats, the more weight she will gain.
 
 
 ## Who is the target audience for your project?
-> Anyone who wants to relax or wants to lose weight like me. 
+> Anyone who wants to relax or wants to lose weight like me.
 Hopefully anybody who wants to lose weight but can't help eating can realize that it's necessary to say goodbye to snacks and start to work out.
 
 ## Where will your project be displayed?
