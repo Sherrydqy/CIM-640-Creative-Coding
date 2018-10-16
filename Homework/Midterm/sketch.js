@@ -13,6 +13,8 @@ var preMillisTickTock = 0;
 var preMillisAngry = 0;
 var preMillisEaten = -1;
 var preHour = -2;
+var startEatTime;
+var stopEatTime;
 var imgFaceSleep;
 var imgFaceAwake;
 var imgFaceOpenMouth;
@@ -23,6 +25,8 @@ var imgSun;
 var imgWaffle;
 var nowHour = 4;
 var isTimetoWakeup = false;
+var isTimetoWeight = false;
+var isSpacePressed = false;
 var interval1 = 800;
 var interval2 = 800;
 var intervalAngry = 2000;
@@ -33,6 +37,8 @@ var isEating = false;
 var bgPositionAngle;
 var targetX = 0;
 var targetY = 0;
+var textTimeLeft;
+var timeLeft = 0;
 var x = 100;
 var y = 100;
 var easingMouse = 0.1;
@@ -73,11 +79,13 @@ function draw() {
   else{
     currentBgImg = imgSun;
   }
+
   push();
   translate(width/2,height);
   image(currentBgImg,width/3*cos(bgPositionAngle),width/3*sin(bgPositionAngle),450,450);
   bgPositionAngle+=PI/360;
   pop();
+
   if(millis()-preMillisTickTock > intervalTickTock){
     //console.log(millis());
     preMillisTickTock = millis();
@@ -102,6 +110,7 @@ function draw() {
   text(currentTime,width/2-140,height/5);
   textSize(30);
   text(currentInstruction,width/2-220,height/3)
+
   if(isSleep){
     wakeUp();
 
@@ -110,7 +119,7 @@ function draw() {
     btnWake.hide();
     eatFood();
   }
-  else{
+  else if(isTimetoWeight){
     weighTime();
   }
   //loseWeight();
@@ -121,11 +130,20 @@ function mousePressed(){
     if(mouseX > width/2-youSize/2 && mouseX < width/2+youSize/2 && mouseY > height-youSize-10-youSize/2 && mouseY < height-youSize-10+youSize/2){
       //could use map() to be more specific
       currentFaceImg = imgFaceAngry;
-      currentInstruction = "If I were you, I wouldn't. >_< "
+      currentInstruction = "If I were you, I wouldn't do that...  =_= "
       //console.log("herere");
       preMillisAngry=millis();
     }
   }
+}
+
+function keyPressed(){
+  if(isEating){
+    if(keyCode == 32){
+      stopEatTime+=2000;
+    }
+  }
+
 }
 function wakeUp(){
   currentTime = nowHour+" : 00";
@@ -136,6 +154,8 @@ function wakeUp(){
     btnWake.show();
     btnWake.position(width/2-80,height/2);
     btnWake.mousePressed(function(){
+      startEatTime = millis();
+      stopEatTime = startEatTime + 10000;
       isSleep = false;
       isEating = true;
       preHour = nowHour;
@@ -191,29 +211,47 @@ function eatFood(){
       distance = dist(thisFood.x, thisFood.y, x,y);
       if(distance <= thisFood.size/2+youSize/2){
         youSize+=3;
-        gainedWeight+=thisFood.size/100;
+        gainedWeight+=Math.floor(thisFood.size/10);
         thisIndex = food.indexOf(thisFood);
         food.splice(thisIndex,1);
         currentFaceImg = imgFaceChewing;
         preMillisEaten = millis();
       }
 
-/*      if(preMillisEaten>-1){
-        if(millis()-preMillisEaten>intervalEaten){
-          currentFaceImg = imgFaceChewing;
-        }
-        else {
-          preMillisEaten = -1;
-        }
-      }*/
       else {
         currentFaceImg = imgFaceAwake;
       }
     }
-
+  }
+  timeLeft = stopEatTime - millis();
+  console.log("stopEatTime: "+stopEatTime + "timeLeft: "+timeLeft);
+  if(timeLeft>1000){
+    textSize(15);
+    textTimeLeft = Math.floor(timeLeft/1000)+1;
+    console.log("timeleft:" + textTimeLeft)
+    text(textTimeLeft+" secs left!", width-200,height/5);
+    text("Wanna more time? Try to press Space!",width-300,height/5+100);
+  }
+  if(millis()>stopEatTime){
+    isEating = false;
+    isTimetoWeight = true;
   }
 }
 
+function weighTime(){
+  background(0);
+  targetX = width/2;
+  targetY = height-(youSize/2);
+  x+=(targetX-x)*easingBack;
+  y+=(targetY-y)*easingBack;
+  ellipseMode(CENTER);
+  imageMode(CENTER);
+  fill(meColor);
+  ellipse(x,y,youSize);
+  image(currentFaceImg,x,y,youSize+youSize/4,youSize+youSize/4);
+  textSize(30);
+  text("You have gained: "+ gainedWeight + " pounds!!!!\n Say goodbye to your waffle and throw yourself in the GYM!",width/2-300, height/2);
+}
 
 function loseWeight(){
   targetX = width/2;
