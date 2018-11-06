@@ -23,7 +23,7 @@ var imgFaceAngry;
 var imgMoon;
 var imgSun;
 var imgWaffle;
-var nowHour = 4;
+var nowHour = 0;
 var isTimetoWakeup = false;
 var isTimetoWeight = false;
 var isSpacePressed = false;
