@@ -9,4 +9,4 @@
 * [LibraryExplore](https://sherrydqy.github.io/CIM640/Homework/LibraryExplore/index.html)
 * [Final - Attention](https://sherrydqy.github.io/CIM640/Homework/Final/Attention)
  It's a processing project. You can't open it on web. Sorry.
-  * [Test vedio]((https://sherrydqy.github.io/CIM640/Homework/Final/test.mp4))
+  * [Test video](https://sherrydqy.github.io/CIM640/Homework/Final/test.mp4)
