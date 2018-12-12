@@ -11,4 +11,4 @@
  It's a processing project. You can't open it on web. Sorry.
   * [Test video](https://sherrydqy.github.io/CIM640/Homework/Final/test.mp4)
   The interface looks like this:
-  (./Final/interface.png)
+  ![](./Final/interface.png)
