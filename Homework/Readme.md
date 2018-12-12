@@ -6,7 +6,7 @@
 * [Midterm - Don't overeat](https://sherrydqy.github.io/CIM640/Homework/Midterm/index.html)
   * [p5js code here](https://sherrydqy.github.io/CIM640/Homework/Midterm/sketch.js)
   * [Food class code here](https://sherrydqy.github.io/CIM640/Homework/Midterm/Food.js)
-* [LibraryExplore] (https://sherrydqy.github.io/CIM640/Homework/LibraryExplore/index.html)
+* [LibraryExplore](https://sherrydqy.github.io/CIM640/Homework/LibraryExplore/index.html)
 * [Final - Attention](https://sherrydqy.github.io/CIM640/Homework/Final/Attention)
  It's a processing project. You can't open it on web. Sorry.
   * [Test vedio]((https://sherrydqy.github.io/CIM640/Homework/Final/test.mp4))
