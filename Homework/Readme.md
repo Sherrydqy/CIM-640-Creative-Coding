@@ -12,5 +12,5 @@
   * [Test video](https://sherrydqy.github.io/CIM640/Homework/Final/test.mp4)
   * The initial interface looks like this:
   ![](./Final/interface.png)
-  * Here is a gif.
-  ![](./Final/interface.gif)
+  * Here is a .gif.
+  ![](./Final/Interface.gif)
