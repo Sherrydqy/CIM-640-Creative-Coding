@@ -10,7 +10,7 @@
 * [Final - Attention](https://sherrydqy.github.io/CIM640/Homework/Final/Attention)
  It's a processing project. You can't open it on web. Sorry.
   * [Test video](https://sherrydqy.github.io/CIM640/Homework/Final/test.mp4)
-  The initial interface looks like this:
+  * The initial interface looks like this:
   ![](./Final/interface.png)
-  Here is a gif.
+  * Here is a gif.
   ![](./Final/interface.gif)
