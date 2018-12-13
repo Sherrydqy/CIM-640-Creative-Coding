@@ -1,45 +1,37 @@
-var btnWidth = 80;
-var btnHeight = 50;
-var playColor = "green";
-var stopColor = "red";
-var pauseColor = "yellow";
-var nextColor = "blue";
+var soundFile;
+var fft;
+var fftBands = 1024;
+var waveform = [];
 
-function preload(){
-  sound = loadSound('../addons/Tempo-EXO.mp3');
+function preload() {
+  soundFormats('mp3', 'ogg');
+  soundFile = loadSound('../addons/Tempo_EXO');
 }
 
-function setup(){
-  var cnv = createCanvas(windowWidth,windowHeight);
-  cnv.mouseClicked(togglePlay);
-  fft = new p5.FFT();
-  sound.amp(0.1);
-}
-
-function draw(){
-  background(0);
-
-  var waveform = fft.waveform();
+function setup() {
+  createCanvas(fftBands, 256);
   noFill();
-  //console.log("spectrum.length"+ waveform.length);
+  soundFile.loop();
+  fft = new p5.FFT(.99, fftBands);
+  p = createP('press any key to pause / play');
+}
+
+function draw() {
+  background(250);
+  waveform = fft.waveform();
   beginShape();
-  stroke(255,0,0); // waveform is red
-  strokeWeight(1);
   for (var i = 0; i< waveform.length; i++){
-    var x = map(i, 0, waveform.length, 0, width);
-    var y = map( waveform[i], -1, 1, 0, height);
-    vertex(x,y);
+    stroke(5);
+    strokeWeight(5);
+    vertex(i*2, map(waveform[i], -1, 1, height, 0) );
   }
   endShape();
-
-  text('click to play/pause', 4, 10);
 }
 
-// fade sound if mouse is over canvas
-function togglePlay() {
-  if (sound.isPlaying()) {
-    sound.pause();
+function keyPressed() {
+  if (soundFile.isPlaying() ) {
+    soundFile.pause();
   } else {
-    sound.loop();
+    soundFile.play();
   }
 }
