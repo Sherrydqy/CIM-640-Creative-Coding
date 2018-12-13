@@ -5,7 +5,7 @@ var waveform = [];
 
 function preload() {
   soundFormats('mp3', 'ogg');
-  soundFile = loadSound('../addons/Tempo_EXO');
+  soundFile = loadSound('../addons/Tempo_EXO.mp3');
 }
 
 function setup() {
