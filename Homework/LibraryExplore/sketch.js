@@ -18,27 +18,6 @@ function setup(){
 
 function draw(){
   background(0);
-  var spectrum = fft.analyze();
-
-  //stroke(0,255,0); // spectrum is green
-  noFill();
-  stroke("green");
-  strokeWeight(1);
-
-  for (var i = 0; i< spectrum.length; i++){
-    var x = map(i, 0, spectrum.length, 140,240);
-    var y = -map( spectrum[i],  -1, 1, 0, height);
-    vertex(x,y);
-    i+=59;
-  }
-  endShape();
-  /*for (var i = 0; i < spectrum.length;i++){
-    var x = map(i, 0, spectrum.length, width/3, width-width/3);
-    var h = -map(spectrum[i], 0, 255, 0, height/2);
-    noFill();
-    rect(x, height/2, width / spectrum.length, h);
-    i+=20;
-  }*/
 
   var waveform = fft.waveform();
   noFill();
