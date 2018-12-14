@@ -1,6 +1,10 @@
 # Title
 #### Don't overeat!
 
+* [Sketch is here.](https://sherrydqy.github.io/CIM640/Homework/Midterm/index.html)
+* [p5js code here](https://sherrydqy.github.io/CIM640/Homework/Midterm/sketch.js)
+* [Food class code here](https://sherrydqy.github.io/CIM640/Homework/Midterm/Food.js)
+
 ## Why are you making this project? What is your motivation?
   >I had a hard time figuring out what I should do. And then there was a day when I went downstairs and stood in front of my cabinet the fifth time in the morning looking for something to eat. I usually keep my cabinet free of snacks because I know I can not help eating them if I have them. Then this idea hit me:"I am going to make a character of myself with my favorite food. She has to escape from bombardment of those rich food in case she gains too much weight. It is going to be fun!"
 

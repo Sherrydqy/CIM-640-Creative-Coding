@@ -1,5 +1,19 @@
 # Title
 ### Attention
+# idea
+
+## 3 potential ideas
+I only have 2 potential ideas
+* map different brainwave level to different music note and make them a song
+* use attention of users to change things from disordered to ordered
+
+## Final Idea:
+#### we all live in a world full of distractions. There are tons of things lying in wait to distract us from our ultimate goal. Focusing on one thing becomes harder. But do we know how powerful our attention would be if we can fully focus? Therefore, I had this idea.
+* Experience 1: At first, things will scattered all over the place while moving in different directions, representing the chaos of the world.
+* While users become more focused, things will gradually gather together. Everything will become ordered gradually.
+* If users cannot keep focusing, things will become scatter again.
+
+I did not find any examples that influence my project. It's just an idea that popped up all of a sudden.
 
 # Explanation:
 ## Why are you making this project? What is your motivation?
