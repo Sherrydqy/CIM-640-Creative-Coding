@@ -1,7 +1,7 @@
 # Title
 ### Attention
-# idea
 
+# Idea
 ## 3 potential ideas
 I only have 2 potential ideas
 * map different brainwave level to different music note and make them a song
