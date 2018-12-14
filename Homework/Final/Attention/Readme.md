@@ -10,8 +10,8 @@ I only have 2 potential ideas
 ## Final Idea:
 #### we all live in a world full of distractions. There are tons of things lying in wait to distract us from our ultimate goal. Focusing on one thing becomes harder. But do we know how powerful our attention would be if we can fully focus? Therefore, I had this idea.
 * Experience 1: At first, things will scattered all over the place while moving in different directions, representing the chaos of the world.
-* While users become more focused, things will gradually gather together. Everything will become ordered gradually.
-* If users cannot keep focusing, things will become scatter again.
+* Experience 2: While users become more focused, things will gradually gather together. Everything will become ordered gradually.
+* Experience 3: If users cannot keep focusing, things will become scatter again.
 
 I did not find any examples that influence my project. It's just an idea that popped up all of a sudden.
 
